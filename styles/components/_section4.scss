@@ -1,0 +1,47 @@
+@import "../utils/inheritance";
+.section4{
+    @extend %main-position;
+    width: 100%;
+    height: 500px;
+    background: url("../../assets/background-image2.png"), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+    background-size: cover;
+    color: white;
+    h1{
+        max-width: 600px;
+        font-size: 4rem;
+        text-align: center;
+        font-weight: 600;
+    }
+    .button{
+            @extend %button;
+            margin-top: 20px;
+            a{
+                text-align: center;
+                padding: 9px 22px;
+                background-color: $major-a-gold;
+                border-radius: 15px;
+                color: black;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-size: 1.2rem;
+            }
+            a:hover{
+                background-color: $major-a-hover-color;
+                color: white;
+            }
+    }
+
+    @include responsive(large-tablet){
+        h1{
+            max-width: 550px;
+            font-size: 3rem;
+        }
+    }
+    @include responsive(small-tablet){
+        height: 300px;
+        h1{
+            max-width: 500px;
+            font-size: 2.2rem;
+        }
+    }
+}

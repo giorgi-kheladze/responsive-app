@@ -1,0 +1,145 @@
+@import "../utils/variables";
+@import "../utils/inheritance";
+@import "../utils/mixins";
+.section2{
+    padding: 200px;
+    .text{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+        
+        h1{
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        p{
+            font-size: 1.2rem;
+            max-width: 900px;
+        }
+    }
+    .categories{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        text-align: center;
+        div{
+            cursor: pointer;
+            transition: all .7s ease;
+            img{
+                width: 250px;
+                height: 250px;
+            }
+        }
+        div:hover{
+            transform: translateY(-5px);
+        }
+    }
+    .button{
+        margin-top: 100px;
+            @extend %button;
+            a{
+                font-size: 2rem;
+                text-align: center;
+                padding: 9px 22px;
+                background-color: $major-a-color;
+                border-radius: 15px;
+                color: white;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            a:hover{
+                background-color: $major-a-hover-color;
+            }
+    }
+
+    @include responsive(desktop){
+        .categories{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @include responsive(laptop){
+        .categories{
+            div{
+                img{
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+        .button{
+            margin-bottom: -50px;
+            a{
+                font-size: 1.4rem;
+            }
+        }
+    }
+    @include responsive(large-tablet){
+        .categories{
+            div{
+                img{
+                    width: 170px;
+                    height: 170px;
+                }
+            }
+        }
+    }
+    @include responsive(tablet){
+        padding: 50px;
+        .categories{
+            grid-template-columns: repeat(2, 1fr);
+            div{
+                img{
+                    width: 170px;
+                    height: 170px;
+                }
+            }
+        }
+    }
+    @include responsive(small-tablet){
+        .categories{
+            grid-template-columns: repeat(2, 1fr);
+            div{
+                img{
+                    width: 170px;
+                    height: 170px;
+                }
+            }
+        }
+        .button{
+            margin-bottom: 20px;
+        }
+    }
+    @include responsive(mobile){
+        .text{
+            margin-bottom: 60px;
+            
+            h1{
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-bottom: 15px;
+                max-width: 800px;
+            }
+            p{
+                font-size: .9rem;
+                max-width: 900px;
+            }
+        }
+        .categories{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+            div{
+                text-align: center;
+                img{
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+        }
+    }
+}

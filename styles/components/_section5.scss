@@ -1,0 +1,36 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+footer{
+    padding: 50px;
+    width: 100%;
+    height: 300px;
+    background-color: $major-a-color;
+    display: flex;
+    justify-content: space-evenly;
+    .links, .contact{
+        display: flex;
+        gap: 60px;
+        h1{
+            color: rgb(169, 168, 168);
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include responsive(small-tablet){
+        padding: 20px;
+        .links, .contact{
+            gap: 20px;
+            h1{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
